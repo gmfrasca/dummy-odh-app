@@ -1,0 +1,14 @@
+apiVersion: kfdef.apps.kubeflow.org/v1
+kind: KfDef
+metadata:
+  name: dummy-odh-app
+spec:
+  applications:
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: manifests/opendatahub
+      name: dummy-app
+  repos:
+    - name: manifests
+      uri: "https://github.com/gmfrasca/dummy-odh-app/tarball/main"
